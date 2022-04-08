@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Header } from './components/Header'
-import { Cars, Home, Motorcycles, NotFound } from './pages'
+import { Shop, Home, NotFound } from './pages'
 
 function App() {
 	return (
@@ -9,8 +9,7 @@ function App() {
 				<Header />
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/carros" element={<Cars />} />
-					<Route path="/motos" element={<Motorcycles />} />
+					<Route path="/shop" element={<Shop />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</BrowserRouter>

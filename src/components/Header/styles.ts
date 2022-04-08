@@ -4,7 +4,7 @@ import { IoIosSpeedometer } from 'react-icons/io'
 
 export const Container = styled.div`
 	width: 100vw;
-	height: 40px;
+	height: 50px;
 
 	background: var(--white-color);
 
@@ -27,7 +27,8 @@ export const Container = styled.div`
 		}
 
 		> span {
-			margin-left: 5px;
+			margin-left: 10px;
+			font-size: 20px;
 
 			background: -webkit-linear-gradient(180deg, #333, #000);
 			background-clip: text;
@@ -41,8 +42,8 @@ export const Container = styled.div`
 export const Logo = styled(IoIosSpeedometer)`
 	fill: var(--red-color);
 
-	height: 25px;
-	width: 25px;
+	height: 35px;
+	width: 35px;
 
 	cursor: pointer;
 `
