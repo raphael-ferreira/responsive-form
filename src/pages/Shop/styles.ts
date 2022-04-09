@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 
 import { FaCar, FaMotorcycle } from 'react-icons/fa'
+import { GoLocation } from 'react-icons/go'
 
 export const Container = styled.div`
 	width: 933px;
 
-	background: #f7f7f7;
+	background: var(--white-color);
 `
 
 export const CarIcon = styled(FaCar)`
@@ -22,6 +23,21 @@ export const MotorcycleIcon = styled(FaMotorcycle)`
 	margin-bottom: -4px;
 `
 
+export const LocationIcon = styled(GoLocation)`
+	color: var(--gray-color);
+`
+
 export const Row = styled.div`
-	padding: 20px 10px;
+	padding: 20px 20px 20px 10px;
+
+	:first-child {
+		padding-bottom: 0px;
+	}
+
+	display: flex;
+	justify-content: space-between;
+
+	.column {
+		display: flex;
+	}
 `

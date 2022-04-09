@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 	display: inline-block;
+	color: var(--gray-color);
 
 	> input {
 		opacity: 0;
@@ -19,8 +20,7 @@ export const Container = styled.div`
 			top: 1px;
 			width: 17px;
 			height: 17px;
-			border: 1px solid #aaa;
-			background: #f8f8f8;
+			border: 1px solid var(--border-color);
 			border-radius: 3px;
 		}
 		&:after {
@@ -38,38 +38,6 @@ export const Container = styled.div`
 		&:after {
 			opacity: 0;
 			transform: scale(0);
-		}
-	}
-
-	> input:disabled:not(:checked) + label {
-		&:before {
-			box-shadow: none;
-			border-color: #bbb;
-			background-color: #ddd;
-		}
-	}
-
-	> input:checked + label {
-		&:after {
-			opacity: 1;
-			transform: scale(1);
-		}
-	}
-
-	> input:disabled:checked + label {
-		&:after {
-			color: #999;
-		}
-	}
-
-	> input:disabled + label {
-		color: #aaa;
-	}
-
-	> input:checked:focus + label,
-	input:not(:checked):focus + label {
-		&:before {
-			border: 1px dotted blue;
 		}
 	}
 `

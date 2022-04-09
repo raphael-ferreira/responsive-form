@@ -35,4 +35,9 @@ code {
 	--red-color: rgb(149, 18, 31);
 	--red-hover-color: rgb(132, 72, 77);
 	--white-color: rgb(255, 255, 255);
+
+	--gray-color: #8e8e8e;
+	--gray-hover-color: #ddd;
+
+	--border-color: #ccc;
 }

@@ -22,10 +22,10 @@ export const TabContainer = styled.button<ButtonProps>`
 	display: flex;
 	align-items: flex-end;
 
-	color: #8e8e8e;
+	color: var(--gray-color);
 
 	:hover {
-		background-color: #ddd;
+		background-color: var(--gray-hover-color);
 	}
 
 	${({ active }) => {
@@ -52,7 +52,7 @@ export const TabContainer = styled.button<ButtonProps>`
 			line-height: 20px;
 
 			:nth-child(1) {
-				color: #8e8e8e;
+				color: var(--gray-color);
 			}
 
 			:nth-child(2) {
