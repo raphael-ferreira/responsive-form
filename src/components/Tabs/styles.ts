@@ -6,11 +6,7 @@ export const TabsContainer = styled.div`
 	background-color: #f1f1f1;
 `
 
-interface ButtonProps {
-	active: boolean
-}
-
-export const TabContainer = styled.button<ButtonProps>`
+export const TabContainer = styled.button<{ active: boolean }>`
 	background-color: inherit;
 	float: left;
 	border: none;

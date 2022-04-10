@@ -20,6 +20,14 @@ const YEARS = [
 	2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022,
 ]
 
+const PRICES = [
+	'R$ 25.000 ~ R$ 50.000',
+	'R$ 50.000 ~ R$ 100.000',
+	'R$ 100.000 ~ R$ 250.000',
+	'R$ 250.000 ~ R$ 1.000.000',
+	'R$ 1.000.000 ~ R$ 10.000.000',
+]
+
 export const Shop: React.FC = () => {
 	const [active, setActive] = useState<string>('tabCars')
 	const [isNew, setNew] = useState<boolean>(true)
@@ -27,6 +35,8 @@ export const Shop: React.FC = () => {
 	const [place, setPlace] = useState<string>('')
 	const [make, setMake] = useState<string>('')
 	const [model, setModel] = useState<string>('')
+	const [year, setYear] = useState<string>('')
+	const [price, setPrice] = useState<string>('')
 
 	const [makesList, setMakesList] = useState<MakeType[]>([])
 	const [modelsList, setModelsList] = useState<ModelType[]>([])
@@ -45,6 +55,14 @@ export const Shop: React.FC = () => {
 
 	const handleModelChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		setModel(e.target.value)
+	}
+
+	const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+		setYear(e.target.value)
+	}
+
+	const handlePriceChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+		setPrice(e.target.value)
 	}
 
 	useEffect(() => {
@@ -102,7 +120,7 @@ export const Shop: React.FC = () => {
 							placeholder="Digite aqui o nome da cidade"
 						/>
 					</Col>
-					<Col style={{ display: 'flex' }}>
+					<Col flex>
 						<Selectbox
 							prefix="Marca: "
 							value={make}
@@ -121,14 +139,23 @@ export const Shop: React.FC = () => {
 				</Row>
 
 				<Row>
-					<Col>
+					<Col flex>
 						<Selectbox
 							prefix="Ano: "
-							value={make}
-							onChange={handleMakeChange}
+							value={year}
+							onChange={handleYearChange}
 							suggest={YEARS.map((year) => ({
 								ID: String(year),
 								Name: String(year),
+							}))}
+						/>
+						<Selectbox
+							prefix="Preço: "
+							value={price}
+							onChange={handlePriceChange}
+							suggest={PRICES.map((price) => ({
+								ID: String(price),
+								Name: String(price),
 							}))}
 						/>
 					</Col>
