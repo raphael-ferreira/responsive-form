@@ -35,7 +35,11 @@ code {
 	--red-color: rgb(149, 18, 31);
 	--red-secondary-color: rgb(132, 72, 77);
 	--red-hover-color: rgb(222, 12, 29);
+
+	--dark-red-color: rgb(85, 49, 52);
+
 	--white-color: rgb(255, 255, 255);
+	--black-color: #000;
 
 	--gray-color: #8e8e8e;
 	--gray-hover-color: #ddd;

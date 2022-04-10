@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Header } from './components'
+import { Footer, Header } from './components'
 import { Shop, Home, NotFound } from './pages'
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
 					<Route path="/shop" element={<Shop />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
+				<Footer />
 			</BrowserRouter>
 		</div>
 	)
