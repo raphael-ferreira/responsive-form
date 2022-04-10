@@ -5,6 +5,7 @@ import { GoLocation } from 'react-icons/go'
 
 export const Container = styled.div`
 	width: 933px;
+	height: 312px;
 
 	background: var(--white-color);
 
@@ -33,7 +34,7 @@ export const LocationIcon = styled(GoLocation)`
 `
 
 export const Row = styled.div`
-	padding: 20px 10px 0px 10px;
+	padding: 17px 17px 0px 17px;
 
 	:last-child {
 		padding-bottom: 20px;
