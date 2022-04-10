@@ -18,12 +18,15 @@ export const Container = styled.div`
 		margin-left: 5px;
 	}
 
-	> input {
+	> select {
 		width: 100%;
+
+		background-color: transparent;
 
 		color: var(--gray-color);
 
 		font-size: 16px;
+		font-weight: bold;
 
 		border: 0;
 
@@ -32,6 +35,14 @@ export const Container = styled.div`
 		:focus {
 			outline: none;
 			outline-width: 0;
+		}
+
+		> option {
+			font-weight: normal;
+
+			&.default {
+				font-weight: bold;
+			}
 		}
 	}
 `

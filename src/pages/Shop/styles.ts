@@ -36,8 +36,10 @@ export const Row = styled.div`
 
 	display: flex;
 	justify-content: space-between;
+`
 
-	.column {
-		display: flex;
-	}
+export const Col = styled.div`
+	width: 50%;
+
+	margin-right: 10px;
 `
