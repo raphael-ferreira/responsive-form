@@ -12,7 +12,7 @@ export const Container = styled.div`
 	background: -webkit-linear-gradient(
 		45deg,
 		var(--white-color),
-		var(--border-color)
+		var(--gray-color)
 	);
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -24,6 +24,16 @@ export const Container = styled.div`
 
 		&.welcome {
 			margin-bottom: 40px;
+
+			@media (max-width: 600px) {
+				margin-bottom: 30px;
+			}
+		}
+
+		@media (max-width: 600px) {
+			font-size: 1.8em;
+			font-weight: bold;
+			line-height: 40px;
 		}
 	}
 
@@ -40,5 +50,9 @@ export const Container = styled.div`
 
 			background-color: transparent;
 		}
+	}
+
+	@media (max-width: 600px) {
+		min-width: 100%;
 	}
 `
