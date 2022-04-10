@@ -1,5 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
+import { Container } from './styles'
 
 export const NotFound: React.FC = () => {
-	return <h1>Página não encontrada</h1>
+	return (
+		<Container>
+			<p className="title">Página não encontrada</p>
+			<p>
+				<Link to="/">retornar a página inicial</Link>
+			</p>
+		</Container>
+	)
 }
