@@ -13,6 +13,16 @@ export type ModelType = {
 	Name: string
 }
 
+export type VersionType = {
+	ModelID: string
+	ID: string
+	Name: string
+}
+
 export const getMakes = () => axios.get('/make-list.json')
+
 export const getModels = (makeID: string) =>
 	axios.get(`/models-list.json?MakeID=${makeID}`)
+
+export const getVersions = (modelID: string) =>
+	axios.get(`/versions-list.json?ModelID=${modelID}`)

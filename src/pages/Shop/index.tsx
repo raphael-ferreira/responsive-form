@@ -3,6 +3,7 @@ import { Checkbox, Selectbox, Tab, Tabs, Textbox } from '../../components'
 import {
 	getMakes,
 	getModels,
+	getVersions,
 	MakeType,
 	ModelType,
 } from '../../services/ShopServices'
@@ -37,9 +38,11 @@ export const Shop: React.FC = () => {
 	const [model, setModel] = useState<string>('')
 	const [year, setYear] = useState<string>('')
 	const [price, setPrice] = useState<string>('')
+	const [version, setVersion] = useState<string>('')
 
 	const [makesList, setMakesList] = useState<MakeType[]>([])
 	const [modelsList, setModelsList] = useState<ModelType[]>([])
+	const [versionsList, setVersionsList] = useState<ModelType[]>([])
 
 	const handlePlaceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setPlace(e.target.value)
@@ -53,8 +56,12 @@ export const Shop: React.FC = () => {
 		setModelsList(response.data)
 	}
 
-	const handleModelChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+	const handleModelChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
 		setModel(e.target.value)
+
+		const response = await getVersions(e.target.value)
+
+		setVersionsList(response.data)
 	}
 
 	const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -63,6 +70,10 @@ export const Shop: React.FC = () => {
 
 	const handlePriceChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		setPrice(e.target.value)
+	}
+
+	const handleVersionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+		setVersion(e.target.value)
 	}
 
 	useEffect(() => {
@@ -157,6 +168,16 @@ export const Shop: React.FC = () => {
 								ID: String(price),
 								Name: String(price),
 							}))}
+						/>
+					</Col>
+
+					<Col>
+						<Selectbox
+							prefix="Versão: "
+							value={version}
+							onChange={handleVersionChange}
+							suggest={versionsList}
+							disabled={model === ''}
 						/>
 					</Col>
 				</Row>

@@ -6,7 +6,6 @@ export const Container = styled.div`
 	border: 1px solid var(--border-color);
 	color: var(--gray-color);
 
-	margin-left: 10px;
 	padding: 10px;
 
 	border-radius: 5px;

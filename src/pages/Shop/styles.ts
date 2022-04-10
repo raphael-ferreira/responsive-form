@@ -41,7 +41,15 @@ export const Row = styled.div`
 export const Col = styled.div<{ flex?: boolean }>`
 	width: 50%;
 
-	margin-right: 10px;
+	margin: 0 5px;
+
+	> * {
+		margin-right: 10px;
+
+		&:last-child {
+			margin: 0px;
+		}
+	}
 
 	${({ flex }) => flex && 'display: flex;'}
 `
