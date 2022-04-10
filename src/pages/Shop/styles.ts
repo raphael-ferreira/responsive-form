@@ -35,7 +35,56 @@ export const Row = styled.div`
 	}
 
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
+
+	.advancedSearch {
+		font-weight: bold;
+		color: var(--red-color);
+
+		cursor: not-allowed;
+	}
+
+	#ClearButton {
+		margin-right: 20px;
+
+		color: var(--gray-color);
+
+		cursor: pointer;
+
+		:hover {
+			color: var(--black-color);
+			text-decoration: underline;
+		}
+	}
+
+	#FilterButton {
+		width: 300px;
+
+		margin-right: 5px;
+		padding: 10px 20px;
+		font-size: 18px;
+
+		border-radius: 5px;
+		border: 0;
+		outline: none;
+		cursor: pointer;
+
+		color: var(--white-color);
+		background-image: linear-gradient(
+			45deg,
+			var(--red-color),
+			var(--red-hover-color)
+		);
+
+		:hover {
+			background-image: linear-gradient(
+				45deg,
+				var(--red-hover-color),
+				var(--red-hover-color)
+			);
+		}
+	}
 `
 
 export const Col = styled.div<{ flex?: boolean }>`

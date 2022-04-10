@@ -20,6 +20,7 @@ export const Selectbox: React.FC<SelectboxProps> = (props) => {
 		onChange,
 		placeholder = 'Selecione',
 		disabled,
+		value,
 	} = props
 
 	return (
@@ -27,9 +28,9 @@ export const Selectbox: React.FC<SelectboxProps> = (props) => {
 			<Container className={disabled ? 'disabled' : ''}>
 				{icon}
 				{prefix && <span>{prefix}</span>}
-				<select onChange={onChange} defaultValue={placeholder}>
+				<select onChange={onChange} value={value}>
 					{!selectAllText && placeholder && (
-						<option value={placeholder} className="default" disabled>
+						<option value="" className="default" disabled>
 							{placeholder}
 						</option>
 					)}

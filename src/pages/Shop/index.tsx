@@ -76,6 +76,21 @@ export const Shop: React.FC = () => {
 		setVersion(e.target.value)
 	}
 
+	const handleClearFilterClick = () => {
+		setNew(false)
+		setUsed(false)
+		setPlace('')
+		setMake('')
+		setModel('')
+		setYear('')
+		setPrice('')
+		setVersion('')
+	}
+
+	const handleSubmitForm = (e: React.FormEvent) => {
+		e.preventDefault()
+	}
+
 	useEffect(() => {
 		const getMakesList = async () => {
 			const response = await getMakes()
@@ -105,7 +120,7 @@ export const Shop: React.FC = () => {
 				/>
 			</Tabs>
 
-			<form>
+			<form onSubmit={handleSubmitForm}>
 				<Row>
 					<div>
 						<Checkbox
@@ -180,6 +195,19 @@ export const Shop: React.FC = () => {
 							disabled={model === ''}
 						/>
 					</Col>
+				</Row>
+
+				<Row>
+					<span className="advancedSearch" style={{ cursor: 'not-allowed' }}>
+						{' '}
+						➧ Busca avançada
+					</span>
+					<div className="action">
+						<span id="ClearButton" onClick={handleClearFilterClick}>
+							Limpar filtros
+						</span>
+						<input type="submit" id="FilterButton" value="VER OFERTAS" />
+					</div>
 				</Row>
 			</form>
 		</Container>
