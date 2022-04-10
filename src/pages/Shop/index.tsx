@@ -16,6 +16,10 @@ import {
 	Col,
 } from './styles'
 
+const YEARS = [
+	2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022,
+]
+
 export const Shop: React.FC = () => {
 	const [active, setActive] = useState<string>('tabCars')
 	const [isNew, setNew] = useState<boolean>(true)
@@ -112,6 +116,20 @@ export const Shop: React.FC = () => {
 							onChange={handleModelChange}
 							suggest={modelsList}
 							disabled={make === ''}
+						/>
+					</Col>
+				</Row>
+
+				<Row>
+					<Col>
+						<Selectbox
+							prefix="Ano: "
+							value={make}
+							onChange={handleMakeChange}
+							suggest={YEARS.map((year) => ({
+								ID: String(year),
+								Name: String(year),
+							}))}
 						/>
 					</Col>
 				</Row>
