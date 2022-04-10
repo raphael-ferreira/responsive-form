@@ -45,4 +45,10 @@ export const Container = styled.div`
 			}
 		}
 	}
+
+	&.disabled {
+		pointer-events: none;
+
+		opacity: 0.4;
+	}
 `

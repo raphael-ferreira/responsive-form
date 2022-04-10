@@ -14,7 +14,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 }) => {
 	return (
 		<Container onClick={onChange}>
-			<input type="checkbox" checked={checked} />
+			<input type="checkbox" checked={checked} readOnly />
 			<label>{label}</label>
 		</Container>
 	)

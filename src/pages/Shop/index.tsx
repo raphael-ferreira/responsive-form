@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Checkbox, Selectbox, Tab, Tabs, Textbox } from '../../components'
-import { getMakes, MakeType } from '../../services/ShopServices'
+import {
+	getMakes,
+	getModels,
+	MakeType,
+	ModelType,
+} from '../../services/ShopServices'
 
 import {
 	Container,
@@ -17,15 +22,25 @@ export const Shop: React.FC = () => {
 	const [isUsed, setUsed] = useState<boolean>(true)
 	const [place, setPlace] = useState<string>('')
 	const [make, setMake] = useState<string>('')
+	const [model, setModel] = useState<string>('')
 
 	const [makesList, setMakesList] = useState<MakeType[]>([])
+	const [modelsList, setModelsList] = useState<ModelType[]>([])
 
 	const handlePlaceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setPlace(e.target.value)
 	}
 
-	const handleMakeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+	const handleMakeChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
 		setMake(e.target.value)
+
+		const response = await getModels(e.target.value)
+
+		setModelsList(response.data)
+	}
+
+	const handleModelChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+		setModel(e.target.value)
 	}
 
 	useEffect(() => {
@@ -90,6 +105,13 @@ export const Shop: React.FC = () => {
 							onChange={handleMakeChange}
 							selectAllText="Todas"
 							suggest={makesList}
+						/>
+						<Selectbox
+							prefix="Modelo: "
+							value={model}
+							onChange={handleModelChange}
+							suggest={modelsList}
+							disabled={make === ''}
 						/>
 					</Col>
 				</Row>

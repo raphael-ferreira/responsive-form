@@ -7,17 +7,33 @@ interface SelectboxProps extends React.ButtonHTMLAttributes<HTMLSelectElement> {
 	prefix?: string
 	selectAllText?: string
 	suggest?: { ID: string; Name: string }[]
+	placeholder?: string
+	disabled?: boolean
 }
 
 export const Selectbox: React.FC<SelectboxProps> = (props) => {
-	const { icon, prefix, selectAllText, suggest, onChange } = props
+	const {
+		icon,
+		prefix,
+		selectAllText,
+		suggest,
+		onChange,
+		placeholder = 'Selecione',
+		disabled,
+	} = props
 
 	return (
 		<>
-			<Container>
+			<Container className={disabled ? 'disabled' : ''}>
 				{icon}
 				{prefix && <span>{prefix}</span>}
-				<select onChange={onChange}>
+				<select onChange={onChange} defaultValue={placeholder}>
+					{!selectAllText && placeholder && (
+						<option value={placeholder} className="default" disabled>
+							{placeholder}
+						</option>
+					)}
+
 					{selectAllText && (
 						<option value={selectAllText} className="default">
 							{selectAllText}
