@@ -107,14 +107,20 @@ export const Shop: React.FC = () => {
 				<Tab
 					className="tabCars"
 					active={active === 'tabCars'}
-					onClick={() => setActive('tabCars')}
+					onClick={() => {
+						setActive('tabCars')
+						handleClearFilterClick()
+					}}
 					icon={<CarIcon />}
 					text="Comprar carros"
 				/>
 				<Tab
 					className="tabMotorcycle"
 					active={active === 'tabMotorcycle'}
-					onClick={() => setActive('tabMotorcycle')}
+					onClick={() => {
+						setActive('tabMotorcycle')
+						handleClearFilterClick()
+					}}
 					icon={<MotorcycleIcon />}
 					text="Comprar motos"
 				/>
