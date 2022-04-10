@@ -198,8 +198,7 @@ export const Shop: React.FC = () => {
 				</Row>
 
 				<Row>
-					<span className="advancedSearch" style={{ cursor: 'not-allowed' }}>
-						{' '}
+					<span id="AdvancedSearchButton" style={{ cursor: 'not-allowed' }}>
 						➧ Busca avançada
 					</span>
 					<div className="ButtonsContainer">

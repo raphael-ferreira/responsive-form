@@ -43,11 +43,13 @@ export const Row = styled.div`
 	align-items: center;
 	justify-content: space-between;
 
-	.advancedSearch {
+	#AdvancedSearchButton {
 		font-weight: bold;
 		color: var(--red-color);
 
 		cursor: not-allowed;
+
+		margin-left: 5px;
 
 		@media (max-width: 600px) {
 			margin: 10px 0;
@@ -88,13 +90,13 @@ export const Row = styled.div`
 			background-image: linear-gradient(
 				45deg,
 				var(--red-color),
-				var(--red-hover-color)
+				var(--red-secondary-color)
 			);
 
 			:hover {
 				background-image: linear-gradient(
 					45deg,
-					var(--red-hover-color),
+					var(--red-color),
 					var(--red-hover-color)
 				);
 			}

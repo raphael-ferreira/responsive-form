@@ -11,6 +11,8 @@ export const Container = styled.div`
 	display: flex;
 	align-items: center;
 
+	justify-content: space-between;
+
 	padding: 20px 10px;
 
 	> a {
@@ -50,7 +52,7 @@ export const Container = styled.div`
 		background-image: linear-gradient(
 			45deg,
 			var(--red-color),
-			var(--red-hover-color)
+			var(--red-secondary-color)
 		);
 
 		color: var(--white-color);

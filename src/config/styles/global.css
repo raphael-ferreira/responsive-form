@@ -33,7 +33,8 @@ code {
 
 :root {
 	--red-color: rgb(149, 18, 31);
-	--red-hover-color: rgb(132, 72, 77);
+	--red-secondary-color: rgb(132, 72, 77);
+	--red-hover-color: rgb(222, 12, 29);
 	--white-color: rgb(255, 255, 255);
 
 	--gray-color: #8e8e8e;
