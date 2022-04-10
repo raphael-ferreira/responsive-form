@@ -30,7 +30,7 @@ export const MotorcycleIcon = styled(FaMotorcycle)`
 `
 
 export const LocationIcon = styled(GoLocation)`
-	color: var(--gray-color);
+	color: var(--red-color);
 `
 
 export const Row = styled.div`
