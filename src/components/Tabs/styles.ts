@@ -4,11 +4,21 @@ export const TabsContainer = styled.div`
 	overflow: hidden;
 	border: 1px solid #ccc;
 	background-color: #f1f1f1;
+
+	display: flex;
+	flex-direction: row;
+
+	@media (max-width: 600px) {
+		justify-content: space-between;
+
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
 `
 
 export const TabContainer = styled.button<{ active: boolean }>`
 	background-color: inherit;
-	float: left;
 	border: none;
 	outline: none;
 	cursor: pointer;
@@ -53,11 +63,15 @@ export const TabContainer = styled.button<{ active: boolean }>`
 
 			:nth-child(2) {
 				font-size: 24px;
-				line-height: 20px;
 
 				display: block;
 				text-transform: uppercase;
 			}
 		}
+	}
+
+	@media (max-width: 600px) {
+		justify-content: center;
+		width: 100%;
 	}
 `

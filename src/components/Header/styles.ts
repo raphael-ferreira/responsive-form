@@ -4,7 +4,7 @@ import { IoIosSpeedometer } from 'react-icons/io'
 
 export const Container = styled.div`
 	width: 100vw;
-	height: 50px;
+	height: 70px;
 
 	background: var(--white-color);
 
@@ -35,7 +35,25 @@ export const Container = styled.div`
 			-webkit-text-fill-color: transparent;
 
 			cursor: pointer;
+
+			@media (max-width: 600px) {
+				color: var(--white-color);
+
+				background: transparent;
+				background-clip: unset;
+				-webkit-text-fill-color: unset;
+			}
 		}
+	}
+
+	@media (max-width: 600px) {
+		background-image: linear-gradient(
+			45deg,
+			var(--red-color),
+			var(--red-hover-color)
+		);
+
+		color: var(--white-color);
 	}
 `
 
@@ -46,4 +64,8 @@ export const Logo = styled(IoIosSpeedometer)`
 	width: 35px;
 
 	cursor: pointer;
+
+	@media (max-width: 600px) {
+		fill: var(--white-color);
+	}
 `

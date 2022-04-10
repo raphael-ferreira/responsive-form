@@ -202,7 +202,7 @@ export const Shop: React.FC = () => {
 						{' '}
 						➧ Busca avançada
 					</span>
-					<div className="action">
+					<div className="ButtonsContainer">
 						<span id="ClearButton" onClick={handleClearFilterClick}>
 							Limpar filtros
 						</span>

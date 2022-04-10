@@ -7,6 +7,11 @@ export const Container = styled.div`
 	width: 933px;
 
 	background: var(--white-color);
+
+	@media (max-width: 600px) {
+		width: 100vw;
+		height: 100vh;
+	}
 `
 
 export const CarIcon = styled(FaCar)`
@@ -43,46 +48,79 @@ export const Row = styled.div`
 		color: var(--red-color);
 
 		cursor: not-allowed;
-	}
 
-	#ClearButton {
-		margin-right: 20px;
-
-		color: var(--gray-color);
-
-		cursor: pointer;
-
-		:hover {
-			color: var(--black-color);
-			text-decoration: underline;
+		@media (max-width: 600px) {
+			margin: 10px 0;
 		}
 	}
 
-	#FilterButton {
-		width: 300px;
+	.ButtonsContainer {
+		#ClearButton {
+			margin-right: 20px;
 
-		margin-right: 5px;
-		padding: 10px 20px;
-		font-size: 18px;
+			color: var(--gray-color);
 
-		border-radius: 5px;
-		border: 0;
-		outline: none;
-		cursor: pointer;
+			cursor: pointer;
 
-		color: var(--white-color);
-		background-image: linear-gradient(
-			45deg,
-			var(--red-color),
-			var(--red-hover-color)
-		);
+			:hover {
+				color: var(--black-color);
+				text-decoration: underline;
+			}
 
-		:hover {
+			@media (max-width: 600px) {
+				margin: 10px 0 10px;
+			}
+		}
+
+		#FilterButton {
+			width: 300px;
+
+			margin-right: 5px;
+			padding: 10px 20px;
+			font-size: 18px;
+
+			border-radius: 5px;
+			border: 0;
+			outline: none;
+			cursor: pointer;
+
+			color: var(--white-color);
 			background-image: linear-gradient(
 				45deg,
-				var(--red-hover-color),
+				var(--red-color),
 				var(--red-hover-color)
 			);
+
+			:hover {
+				background-image: linear-gradient(
+					45deg,
+					var(--red-hover-color),
+					var(--red-hover-color)
+				);
+			}
+		}
+
+		@media (max-width: 600px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	@media (max-width: 600px) {
+		width: 100%;
+
+		flex-direction: column;
+
+		margin-bottom: 0;
+		padding: 0 20px;
+
+		:first-child {
+			padding: 20px 20px;
+		}
+
+		:nth-child(3) {
+			flex-direction: column-reverse;
 		}
 	}
 `
@@ -95,10 +133,25 @@ export const Col = styled.div<{ flex?: boolean }>`
 	> * {
 		margin-right: 10px;
 
+		@media (max-width: 600px) {
+			margin-bottom: 15px;
+		}
+
 		&:last-child {
 			margin: 0px;
+
+			@media (max-width: 600px) {
+			}
 		}
 	}
 
 	${({ flex }) => flex && 'display: flex;'}
+
+	@media (max-width: 600px) {
+		width: 100%;
+
+		flex-direction: column;
+
+		margin-bottom: 15px;
+	}
 `
