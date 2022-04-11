@@ -9,13 +9,7 @@ export const Container = styled.div`
 	align-self: flex-start;
 	justify-content: center;
 
-	background: -webkit-linear-gradient(
-		45deg,
-		var(--white-color),
-		var(--gray-color)
-	);
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
+	color: var(--white-color);
 
 	p {
 		font-size: 5.5em;

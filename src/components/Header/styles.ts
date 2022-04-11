@@ -32,18 +32,12 @@ export const Container = styled.div`
 			margin-left: 10px;
 			font-size: 20px;
 
-			background: -webkit-linear-gradient(180deg, #333, #000);
-			background-clip: text;
-			-webkit-text-fill-color: transparent;
+			color: var(--black-color);
 
 			cursor: pointer;
 
 			@media (max-width: 600px) {
 				color: var(--white-color);
-
-				background: transparent;
-				background-clip: unset;
-				-webkit-text-fill-color: unset;
 			}
 		}
 	}
