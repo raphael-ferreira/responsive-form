@@ -44,24 +44,45 @@ export const Shop: React.FC = () => {
 	const [modelsList, setModelsList] = useState<ModelType[]>([])
 	const [versionsList, setVersionsList] = useState<ModelType[]>([])
 
+	useEffect(() => {
+		const getMakesList = async () => {
+			const response = await getMakes()
+
+			setMakesList(response.data)
+		}
+
+		getMakesList()
+	}, [])
+
 	const handlePlaceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setPlace(e.target.value)
 	}
 
 	const handleMakeChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
+		setModel('')
+		setVersion('')
 		setMake(e.target.value)
 
-		const response = await getModels(e.target.value)
+		const makeID = makesList.find((item) => item.Name === e.target.value)?.ID
 
-		setModelsList(response.data)
+		if (makeID) {
+			const response = await getModels(makeID)
+
+			setModelsList(response.data)
+		}
 	}
 
 	const handleModelChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
+		setVersion('')
 		setModel(e.target.value)
 
-		const response = await getVersions(e.target.value)
+		const modelID = modelsList.find((item) => item.Name === e.target.value)?.ID
 
-		setVersionsList(response.data)
+		if (modelID) {
+			const response = await getVersions(modelID)
+
+			setVersionsList(response.data)
+		}
 	}
 
 	const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -90,16 +111,6 @@ export const Shop: React.FC = () => {
 	const handleSubmitForm = (e: React.FormEvent) => {
 		e.preventDefault()
 	}
-
-	useEffect(() => {
-		const getMakesList = async () => {
-			const response = await getMakes()
-
-			setMakesList(response.data)
-		}
-
-		getMakesList()
-	}, [])
 
 	return (
 		<Container>
