@@ -30,7 +30,7 @@ export const Btn = styled.button`
 			45deg,
 			var(--white-color),
 			var(--border-color)
-		);
+		) !important;
 
 		color: var(--red-color);
 	}
